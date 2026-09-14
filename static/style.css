@@ -516,7 +516,7 @@ body {
 }
 
 .cross-symbol {
-    width: 34px;
+    width: 100%;
     height: 40px;
     color: #d4af37;
     display: flex;
