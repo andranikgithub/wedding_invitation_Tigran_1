@@ -1,0 +1,1864 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #ffffff;
+    color: #b08d3c;
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   PREMIUM WHITE & GOLD BACKGROUND
+========================================================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -10;
+    background: #ffffff;
+}
+
+
+/* Main premium gradient */
+
+.background-gradient {
+
+    position: absolute;
+
+    inset: -25%;
+
+    width: 150%;
+    height: 150%;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 12%,
+            rgba(212, 175, 55, 0.18),
+            transparent 22%
+        ),
+
+        radial-gradient(
+            circle at 10% 55%,
+            rgba(212, 175, 55, 0.08),
+            transparent 38%
+        ),
+
+        radial-gradient(
+            circle at 90% 70%,
+            rgba(212, 175, 55, 0.07),
+            transparent 36%
+        ),
+
+        radial-gradient(
+            circle at 55% 80%,
+            rgba(212, 175, 55, 0.08),
+            transparent 45%
+        ),
+
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #fffdf8 30%,
+            #ffffff 55%,
+            #fffdf8 78%,
+            #ffffff 100%
+        );
+
+    animation:
+        backgroundMove
+        18s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+
+/* =========================================================
+   GOLD LIGHTS
+========================================================= */
+
+.gold-glow {
+
+    position: absolute;
+
+    width: 430px;
+    height: 430px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+
+            rgba(212,175,55,0.22)
+            0%,
+
+            rgba(212,175,55,0.09)
+            28%,
+
+            transparent
+            70%
+        );
+
+    filter: blur(35px);
+
+    pointer-events: none;
+}
+
+
+.glow-1 {
+
+    top: -150px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    animation:
+        glowOne
+        10s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+
+.glow-2 {
+
+    bottom: -170px;
+
+    right: -130px;
+
+    animation:
+        glowTwo
+        14s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+
+/* =========================================================
+   VIGNETTE
+========================================================= */
+
+.background-vignette {
+
+    position: absolute;
+
+    inset: 0;
+
+    box-shadow:
+        inset
+        0
+        0
+        180px
+        rgba(255,255,255,0.75);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   GRAIN
+========================================================= */
+
+.grain {
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .025;
+
+    pointer-events: none;
+
+    background-image:
+
+        url(
+            "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E"
+        );
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.top-bar {
+
+    position: fixed;
+
+    top: 24px;
+
+    left: 0;
+    right: 0;
+
+    padding: 0 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    z-index: 50;
+}
+
+
+.cross-logo {
+
+    width: 45px;
+    height: 45px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        1px solid
+        rgba(212,175,55,.70);
+
+    border-radius: 50%;
+
+    color: #b08d3c;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 22px;
+
+    background:
+        rgba(255,255,255,.88);
+
+    box-shadow:
+        0
+        8px
+        25px
+        rgba(176,141,60,.10);
+
+    backdrop-filter:
+        blur(15px);
+}
+
+
+.music-button {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding:
+        10px
+        15px;
+
+    border:
+        1px solid
+        rgba(176,141,60,.45);
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,.88);
+
+    color: #b08d3c;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: .7px;
+
+    cursor: pointer;
+
+    backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+        0
+        8px
+        25px
+        rgba(176,141,60,.08);
+}
+
+
+.music-icon {
+
+    color: #d4af37;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress {
+
+    position: fixed;
+
+    right: 28px;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 13px;
+
+    z-index: 30;
+}
+
+
+.progress-dot {
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(176,141,60,.25);
+
+    transition:
+        .4s ease;
+}
+
+
+.progress-dot.active {
+
+    width: 11px;
+    height: 11px;
+
+    background:
+        #d4af37;
+
+    box-shadow:
+        0
+        0
+        16px
+        rgba(212,175,55,.55);
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.section {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        110px
+        20px;
+
+    background:
+        transparent;
+}
+
+
+/* =========================================================
+   PREMIUM GLASS CARD
+========================================================= */
+
+.glass-card {
+
+    width:
+        min(
+            760px,
+            92vw
+        );
+
+    padding:
+        55px
+        44px;
+
+    text-align: center;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.96),
+            rgba(255,253,248,.92)
+        );
+
+    border:
+
+        1px solid
+
+        rgba(
+            212,
+            175,
+            55,
+            .45
+        );
+
+    border-radius: 28px;
+
+    box-shadow:
+
+        0
+        30px
+        90px
+        rgba(176,141,60,.13),
+
+        0
+        0
+        0
+        1px
+        rgba(255,255,255,.8)
+        inset;
+
+    backdrop-filter:
+        blur(13px);
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(45px)
+        scale(.97);
+
+    transition:
+
+        opacity
+        1s
+        cubic-bezier(.16,1,.3,1),
+
+        transform
+        1.1s
+        cubic-bezier(.16,1,.3,1);
+}
+
+
+.reveal.show {
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+.top-label {
+
+    color:
+        #b08d3c;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        5px;
+
+    margin-bottom:
+        22px;
+}
+
+
+.cross-symbol {
+
+    font-size:
+        54px;
+
+    color:
+        #d4af37;
+
+    font-family:
+        Georgia,
+        serif;
+
+    text-shadow:
+        0
+        0
+        25px
+        rgba(212,175,55,.28);
+
+    margin-bottom:
+        10px;
+}
+
+
+.small-text {
+
+    color:
+        #b08d3c;
+
+    font-size:
+        13px;
+
+    letter-spacing:
+        1px;
+}
+
+
+h1,
+h2 {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-weight:
+        300;
+
+    color:
+        #a67c22;
+}
+
+
+h1 {
+
+    margin:
+        19px
+        0
+        24px;
+
+    font-size:
+        clamp(
+            65px,
+            10vw,
+            115px
+        );
+
+    line-height:
+        .82;
+}
+
+
+h1 em,
+h2 em {
+
+    color:
+        #d4af37;
+
+    font-style:
+        italic;
+}
+
+
+h2 {
+
+    font-size:
+        clamp(
+            48px,
+            7vw,
+            80px
+        );
+
+    line-height:
+        .95;
+}
+
+
+.main-description {
+
+    max-width:
+        570px;
+
+    margin:
+        0 auto;
+
+    color:
+        #8c7134;
+
+    font-size:
+        15px;
+
+    line-height:
+        1.9;
+}
+
+
+.gold-line {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        12px;
+
+    width:
+        140px;
+
+    margin:
+        27px
+        auto;
+
+    color:
+        #d4af37;
+}
+
+
+.gold-line span {
+
+    width:
+        58px;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #d4af37
+        );
+}
+
+
+.gold-line span:last-child {
+
+    background:
+        linear-gradient(
+            90deg,
+            #d4af37,
+            transparent
+        );
+}
+
+
+/* =========================================================
+   HERO DATE
+========================================================= */
+
+.hero-date {
+
+    margin:
+        31px
+        auto
+        24px;
+}
+
+
+.hero-date div {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        18px;
+}
+
+
+.hero-date span {
+
+    color:
+        #b08d3c;
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        3px;
+}
+
+
+.hero-date strong {
+
+    color:
+        #a67c22;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        76px;
+
+    font-weight:
+        300;
+
+    line-height:
+        .8;
+}
+
+
+.child-quote {
+
+    max-width:
+        530px;
+
+    margin:
+        0 auto;
+
+    color:
+        #9a7b3d;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        20px;
+
+    font-style:
+        italic;
+
+    line-height:
+        1.6;
+}
+
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+.scroll-down {
+
+    margin-top:
+        48px;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    color:
+        #b08d3c;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        4px;
+}
+
+
+.scroll-down i {
+
+    width:
+        45px;
+
+    height:
+        1px;
+
+    background:
+        #d4af37;
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.timeline {
+
+    max-width:
+        610px;
+
+    margin:
+        12px
+        auto
+        0;
+
+    text-align:
+        left;
+}
+
+
+.timeline-item {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        80px
+        30px
+        1fr;
+
+    align-items:
+        center;
+
+    gap:
+        18px;
+
+    padding:
+        28px
+        0;
+
+    border-bottom:
+        1px solid
+        rgba(176,141,60,.18);
+}
+
+
+.timeline-item:last-child {
+
+    border-bottom:
+        none;
+}
+
+
+.timeline-time {
+
+    color:
+        #b08d3c;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        34px;
+}
+
+
+.timeline-point {
+
+    width:
+        26px;
+
+    height:
+        26px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border:
+        1px solid
+        rgba(212,175,55,.65);
+
+    border-radius:
+        50%;
+
+    color:
+        #d4af37;
+
+    font-size:
+        12px;
+
+    background:
+        #ffffff;
+}
+
+
+.timeline-content span {
+
+    color:
+        #b08d3c;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        2px;
+}
+
+
+.timeline-content h3 {
+
+    margin:
+        7px
+        0;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        28px;
+
+    font-weight:
+        400;
+
+    color:
+        #a67c22;
+}
+
+
+.timeline-content p {
+
+    color:
+        #9a7b3d;
+
+    font-size:
+        12px;
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.location-photo {
+
+    width:
+        100%;
+
+    height:
+        clamp(
+            260px,
+            42vw,
+            400px
+        );
+
+    margin-bottom:
+        25px;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        23px;
+
+    border:
+        1px solid
+        rgba(212,175,55,.45);
+
+    box-shadow:
+        0
+        20px
+        55px
+        rgba(176,141,60,.13);
+}
+
+
+.location-photo img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    display:
+        block;
+
+    transition:
+        transform
+        1.2s
+        ease;
+}
+
+
+.location-card:hover
+.location-photo img {
+
+    transform:
+        scale(1.05);
+}
+
+
+.location-tag {
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        14px;
+
+    padding:
+        7px
+        12px;
+
+    border:
+        1px solid
+        rgba(212,175,55,.55);
+
+    border-radius:
+        999px;
+
+    color:
+        #b08d3c;
+
+    background:
+        #ffffff;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        1px;
+}
+
+
+.restaurant-tag {
+
+    color:
+        #a67c22;
+}
+
+
+.location-info {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        40px;
+
+    margin:
+        10px
+        0
+        22px;
+}
+
+
+.info-item {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        6px;
+}
+
+
+.info-label {
+
+    color:
+        #b08d3c;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        2px;
+}
+
+
+.info-item strong {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        25px;
+
+    font-weight:
+        400;
+
+    color:
+        #a67c22;
+}
+
+
+.location-description {
+
+    max-width:
+        530px;
+
+    margin:
+        0 auto;
+
+    color:
+        #92763c;
+
+    line-height:
+        1.8;
+
+    font-size:
+        14px;
+}
+
+
+.address {
+
+    margin-bottom:
+        15px;
+
+    color:
+        #9a7b3d;
+
+    font-size:
+        13px;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.gold-button {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        13px;
+
+    margin-top:
+        28px;
+
+    padding:
+        14px
+        23px;
+
+    border:
+        1px solid
+        #d4af37;
+
+    border-radius:
+        999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #fffaf0
+        );
+
+    color:
+        #a67c22;
+
+    text-decoration:
+        none;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        2px;
+
+    transition:
+        .35s ease;
+
+    box-shadow:
+        0
+        8px
+        25px
+        rgba(176,141,60,.08);
+}
+
+
+.gold-button b {
+
+    color:
+        #d4af37;
+
+    font-size:
+        17px;
+}
+
+
+.gold-button:hover {
+
+    transform:
+        translateY(-4px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffdf8,
+            #ffffff
+        );
+
+    box-shadow:
+        0
+        15px
+        40px
+        rgba(212,175,55,.20);
+}
+
+
+/* =========================================================
+   COUNTDOWN
+========================================================= */
+
+.countdown {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        flex-start;
+
+    gap:
+        10px;
+
+    margin:
+        36px
+        0
+        25px;
+}
+
+
+.count-box {
+
+    min-width:
+        90px;
+}
+
+
+.count-box strong {
+
+    display:
+        block;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(
+            46px,
+            8vw,
+            76px
+        );
+
+    font-weight:
+        300;
+
+    color:
+        #a67c22;
+
+    line-height:
+        1;
+}
+
+
+.count-box span {
+
+    display:
+        block;
+
+    margin-top:
+        9px;
+
+    color:
+        #b08d3c;
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        2px;
+}
+
+
+.count-separator {
+
+    color:
+        #d4af37;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        45px;
+}
+
+
+.countdown-date {
+
+    color:
+        #9a7b3d;
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        2px;
+}
+
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+.final-card {
+
+    padding:
+        75px
+        45px;
+}
+
+
+.final-symbol {
+
+    color:
+        #d4af37;
+
+    font-size:
+        40px;
+
+    margin-bottom:
+        25px;
+}
+
+
+.final-card h2 {
+
+    font-size:
+        clamp(
+            55px,
+            8vw,
+            90px
+        );
+
+    color:
+        #a67c22;
+}
+
+
+.final-card p {
+
+    max-width:
+        500px;
+
+    margin:
+        0 auto;
+
+    color:
+        #92763c;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.9;
+}
+
+
+.final-cross {
+
+    margin-top:
+        34px;
+
+    color:
+        #d4af37;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        45px;
+}
+
+
+/* =========================================================
+   GOLD ANIMATIONS
+========================================================= */
+
+@keyframes backgroundMove {
+
+    0% {
+
+        transform:
+            translate3d(
+                -2%,
+                -1%,
+                0
+            )
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translate3d(
+                2%,
+                1%,
+                0
+            )
+            scale(1.04);
+
+    }
+
+    100% {
+
+        transform:
+            translate3d(
+                -1%,
+                2%,
+                0
+            )
+            scale(1.02);
+
+    }
+}
+
+
+@keyframes glowOne {
+
+    from {
+
+        transform:
+            translateX(-50%)
+            translateY(-20px)
+            scale(.9);
+
+    }
+
+    to {
+
+        transform:
+            translateX(-50%)
+            translateY(75px)
+            scale(1.15);
+
+    }
+
+}
+
+
+@keyframes glowTwo {
+
+    from {
+
+        transform:
+            translate(0,0)
+            scale(.8);
+
+    }
+
+    to {
+
+        transform:
+            translate(-120px,-90px)
+            scale(1.15);
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:650px) {
+
+    .top-bar {
+
+        top:
+            16px;
+
+        padding:
+            0
+            16px;
+
+    }
+
+
+    .cross-logo {
+
+        width:
+            38px;
+
+        height:
+            38px;
+
+        font-size:
+            18px;
+
+    }
+
+
+    .music-button {
+
+        padding:
+            8px
+            11px;
+
+    }
+
+
+    .music-button
+    span:last-child {
+
+        display:
+            none;
+
+    }
+
+
+    .progress {
+
+        display:
+            none;
+
+    }
+
+
+    .section {
+
+        padding:
+            90px
+            14px;
+
+    }
+
+
+    .glass-card {
+
+        padding:
+            40px
+            20px;
+
+        border-radius:
+            22px;
+
+    }
+
+
+    h1 {
+
+        font-size:
+            58px;
+
+    }
+
+
+    h2 {
+
+        font-size:
+            45px;
+
+    }
+
+
+    .hero-date strong {
+
+        font-size:
+            65px;
+
+    }
+
+
+    .hero-date div {
+
+        gap:
+            10px;
+
+    }
+
+
+    .main-description {
+
+        font-size:
+            14px;
+
+    }
+
+
+    .child-quote {
+
+        font-size:
+            18px;
+
+    }
+
+
+    .timeline-item {
+
+        grid-template-columns:
+            62px
+            26px
+            1fr;
+
+        gap:
+            10px;
+
+    }
+
+
+    .timeline-time {
+
+        font-size:
+            27px;
+
+    }
+
+
+    .timeline-content h3 {
+
+        font-size:
+            23px;
+
+    }
+
+
+    .countdown {
+
+        gap:
+            3px;
+
+    }
+
+
+    .count-box {
+
+        min-width:
+            60px;
+
+    }
+
+
+    .count-box strong {
+
+        font-size:
+            43px;
+
+    }
+
+
+    .count-separator {
+
+        font-size:
+            30px;
+
+    }
+
+}
+/* =========================================================
+   SARGSYAN.INVITES — ONLY TEXT
+========================================================= */
+
+.logo-section {
+    min-height: 10vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* padding: 70px 20px; */
+
+
+    position: relative;
+}
+
+
+/* GOLD LINE */
+
+.logo-section::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 120px;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #d4af37,
+        transparent
+    );
+}
+
+
+/* CONTAINER */
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ONLY TEXT — NO BOX */
+
+.text-logo {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    text-decoration: none !important;
+    background: transparent;
+
+    border: none;
+
+    border-radius: 0;
+
+    box-shadow: none;
+
+    outline: none;
+
+    transition: transform 0.4s ease;
+}
+
+
+/* BRAND NAME */
+
+.brand-name {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 33px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    color: #b08d3c;
+
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+
+/* GOLD DOT */
+
+.brand-name span {
+    color: #d4af37;
+}
+
+
+/* SUBTITLE */
+
+.brand-subtitle {
+    display: block;
+
+    margin-top: 12px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 500;
+
+    letter-spacing: 4px;
+
+    color: #b08d3c;
+
+    opacity: 0.8;
+
+    line-height: 1;
+}
+
+
+/* HOVER */
+
+.text-logo:hover {
+    transform: translateY(-3px);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .logo-section {
+        min-height: 30vh;
+        padding: 60px 20px;
+    }
+
+    .brand-name {
+        font-size: 32px;
+    }
+
+    .brand-subtitle {
+        font-size: 7px;
+        letter-spacing: 3px;
+    }
+}
+
+
+/* VERY SMALL PHONES */
+
+@media (max-width: 380px) {
+
+    .brand-name {
+        font-size: 28px;
+    }
+
+    .brand-subtitle {
+        font-size: 6px;
+        letter-spacing: 2.5px;
+    }
+}
