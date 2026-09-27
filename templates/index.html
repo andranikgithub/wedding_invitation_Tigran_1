@@ -2,6 +2,7 @@
 <html lang="hy">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -10,19 +11,66 @@
     >
 
     <title>Մկրտության հրավիրատոմս</title>
-    <meta
-    property="og:type"
-    content="website"
->
 
-<meta
-    property="og:url"
-    content="https://wedding-invitation-tigran-1.onrender.com/"
->
+    <!-- =====================================================
+         SOCIAL MEDIA PREVIEW
+    ====================================================== -->
+
     <meta
-    property="og:image"
-    content="{{ url_for('static', filename='images/church.jpeg', _external=True) }}"
->
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:title"
+        content="Մկրտության հրավիրատոմս — Տիգրան"
+    >
+
+    <meta
+        property="og:description"
+        content="Սիրով հրավիրում ենք Ձեզ մասնակցելու Տիգրանի Սուրբ Մկրտության օրվան։"
+    >
+
+    <meta
+        property="og:url"
+        content="https://wedding-invitation-tigran-1.onrender.com/"
+    >
+
+    <meta
+        property="og:image"
+        content="{{ url_for('static', filename='images/church.jpeg', _external=True) }}"
+    >
+
+    <meta
+        property="og:image:alt"
+        content="Սաղմոսավանք — Տիգրանի մկրտության հրավիրատոմս"
+    >
+
+    <meta
+        property="og:image:type"
+        content="image/jpeg"
+    >
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    >
+
+    <meta
+        name="twitter:title"
+        content="Մկրտության հրավիրատոմս — Տիգրան"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Տիգրանի Սուրբ Մկրտության հրավիրատոմս"
+    >
+
+    <meta
+        name="twitter:image"
+        content="{{ url_for('static', filename='images/church.jpeg', _external=True) }}"
+    >
+
 
     <!-- GOOGLE FONTS -->
 
@@ -80,16 +128,20 @@
     <header class="top-bar">
 
         <div class="cross-logo" aria-label="Խաչ">
-           <svg
-        viewBox="0 0 100 120"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
-    >
-        <path
-            d="M42 8h16v38h34v16H58v50H42V62H8V46h34V8z"
-            fill="currentColor"
-        />
-    </svg>
+
+            <svg
+                viewBox="0 0 100 120"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+            >
+
+                <path
+                    d="M42 8h16v38h34v16H58v50H42V62H8V46h34V8z"
+                    fill="currentColor"
+                />
+
+            </svg>
+
         </div>
 
 
@@ -163,18 +215,20 @@
 
 
                 <div class="cross-symbol reveal">
-                   
-           <svg
-        viewBox="0 0 100 120"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
-    >
-        <path
-            d="M42 8h16v38h34v16H58v50H42V62H8V46h34V8z"
-            fill="currentColor"
-        />
-    </svg>
-      
+
+                    <svg
+                        viewBox="0 0 100 120"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                    >
+
+                        <path
+                            d="M42 8h16v38h34v16H58v50H42V62H8V46h34V8z"
+                            fill="currentColor"
+                        />
+
+                    </svg>
+
                 </div>
 
 
@@ -844,10 +898,9 @@
                 aria-label="Բացել Instagram Reel-ը"
             >
 
-            <span class="brand-name">
-              Sargsyan<span>.</span>Invites
-          </span>
-
+                <span class="brand-name">
+                    Sargsyan<span>.</span>Invites
+                </span>
 
             </a>
 
